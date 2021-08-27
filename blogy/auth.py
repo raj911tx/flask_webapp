@@ -58,7 +58,7 @@ def login():
 
         if user is None:
             error='Wrong Username'
-        elif not check_password_hash(user[password],password):
+        elif not check_password_hash(user['password'],password):
             error='Wrong Password'
 
         if error is None:
@@ -77,8 +77,9 @@ def load_logged_in_user():
     if user_id is None:
         g.user=None
     else:
-        g.user=get_db.execute(
-            "SELECT * FROM user WHERE id=?",(user_id,)).fetchone()
+        g.user=get_db().execute(
+            "SELECT * FROM user WHERE id=?",(user_id,)
+        ).fetchone()
 
 @bp.route('/logout')
 def logout():
