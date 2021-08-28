@@ -1,0 +1,4 @@
+include blogy/schema.sql
+graft blogy/static
+graft blogy/templates
+global-execute *.pyc

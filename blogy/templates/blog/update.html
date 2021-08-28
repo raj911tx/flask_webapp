@@ -5,14 +5,15 @@
 {% endblock %}
 
 {% block content %}
+<div class="box">
     <form method="post">
-        <label for="title">Title</label>
-        <input name="title" id="title" value="{{request.form['title'] or post['title'] }}" required>
-        <label for="body">Body</label>
-        <textarea name="body" id="body">{{request.form['body'] or post['body'] }}</textarea>
-        <input name="body" id="body" value="{{request.form['body'] or post['body'] }}" required>
-        <input type="Submit" value="Save">
+        <label for="title" class="label-form">Title</label>
+        <input name="title" class="auth-form" id="title" value="{{request.form['title'] or post['title'] }}" required>
+        <label for="body" class="label-form">Body</label>
+        <textarea name="body" class="auth-form" id="body">{{request.form['body'] or post['body'] }}</textarea>
+        <input type="Submit" class="btn-submit" value="Save">
     </form>
+</div>
     <hr>
     <form action="{{url_for('blog.delete',id=post['id'])}}" method="post">
         <input class="danger" type="submit" value="Delete" onclick="return confirm('Are you sure wanna delete!!!');">
