@@ -21,3 +21,5 @@ export FLASK_APP=blogy
 export FLASK_ENV=development
 flask run
 ```
+
+!()['https://github.com/raj911tx/flask_webapp/blob/master/feed.PNG']
