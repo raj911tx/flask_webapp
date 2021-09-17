@@ -14,3 +14,10 @@ To initilize the database
 ```
 flask init-db
 ```
+
+To run the web application
+```
+export FLASK_APP=blogy
+export FLASK_ENV=development
+flask run
+```
